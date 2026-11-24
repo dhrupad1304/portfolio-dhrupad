@@ -8,7 +8,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/dhrupad-gupta-483046296",
   resume: "/resume.pdf",
   summary:
-    "I build backend systems that stay fast and reliable under load — secure REST APIs, tuned databases and cloud-deployed services. I'm drawn to the layers underneath: processes, threads, networking and how distributed systems fail. Currently a B.Tech student at SGSITS, Indore, looking for software engineering internships and new-grad roles.",
+    "I'm a B.Tech student at SGSITS, Indore with foundations in operating systems, Python, C++ and backend development. I've built secure REST APIs, optimized databases and deployed cloud-based services, and I'm interested in distributed systems, debugging and backend architecture.",
 };
 
 export const stats = [
@@ -43,28 +43,55 @@ export const experience = [
 
 export const projects = [
   {
+    title: "FactoryMind",
+    badge: "RAG · hit@5 0.974",
+    image: "/factorymind.jpg",
+    description:
+      "Troubleshooting assistant for factory maintenance. It combines vector, full-text and exact fault-code search in Postgres, drafts cited diagnoses with an LLM, then checks each claim against its sources. Hybrid search reached hit@5 of 0.974 on a 38-question test set, against 0.763 for vector and 0.947 for keyword search alone. Uses synthetic demo data.",
+    tech: ["FastAPI", "PostgreSQL", "pgvector", "Next.js", "LLMs"],
+    links: [{ label: "Code", href: "https://github.com/dhrupad1304/factorymind" }],
+  },
+  {
+    title: "LogicForge AI",
+    badge: "Verified Verilog",
+    image: "/logicforge.webp",
+    description:
+      "Describe a circuit in plain English and get Verilog that is compiled, simulated and tested against a separately generated reference model, with pass or fail for each test case, waveforms and schematics. The live demo is password-protected.",
+    tech: ["FastAPI", "Next.js", "TypeScript", "Docker", "Icarus Verilog"],
+    links: [
+      { label: "Live demo", href: "https://logic-forge-ai.vercel.app" },
+      { label: "Code", href: "https://github.com/dhrupad1304/LogicForge-AI" },
+    ],
+  },
+  {
     title: "Novexa — AI Meeting Platform",
     badge: "Top 50 Worldwide · IBM TechXchange",
     image: "/novexa.jpg",
     description:
-      "Team collaboration platform with video meetings, chats, task tracking and AI meeting summaries. I built the backend automation workflows and cloud integrations, and hardened reliability under hackathon deadlines.",
-    tech: ["Node.js", "IBM Cloud", "REST APIs", "WebRTC"],
-    links: [{ label: "Code", href: "https://github.com/dhrupad1304/novexa-ai-meeting-platform" }],
+      "Team collaboration platform with video meetings, chat, task tracking and an AI assistant built on IBM watsonx, made by a team of five. I worked on backend automation workflows and cloud integrations.",
+    tech: ["Next.js", "Node.js", "MongoDB", "IBM watsonx", "WebSockets"],
+    links: [
+      { label: "Live app", href: "https://novexa-cyan.vercel.app/" },
+      { label: "Video", href: "https://youtu.be/zdVjuxpx4rE" },
+      { label: "Code", href: "https://github.com/dhrupad1304/novexa-ai-meeting-platform" },
+    ],
   },
   {
-    title: "LogicForge AI",
-    image: null,
+    title: "Egg Segmentation & Tracking",
+    badge: "Computer vision",
+    image: "/vision-seg.jpg",
+    fit: "contain",
     description:
-      "AI-powered hardware design assistant: generates Verilog from natural language, creates testbenches, runs simulations and helps debug the results.",
-    tech: ["Python", "LLMs", "Verilog", "Simulation"],
-    links: [{ label: "Code", href: "https://github.com/dhrupad1304/LogicForge-AI" }],
+      "Classical OpenCV segmentation compared with Segment Anything (SAM) masks across a series of experiments, plus a baseline video tracker. Mean Dice of 0.645 on 22 held-out images, measured against SAM pseudo-labels.",
+    tech: ["Python", "OpenCV", "SAM", "NumPy"],
+    links: [{ label: "Code", href: "https://github.com/dhrupad1304/Vision_seg" }],
   },
   {
     title: "Expense Tracker 2.0",
     badge: "MERN",
     image: "/expense-tracker.jpg",
     description:
-      "Secure backend with JWT authentication and a modular REST API. Reduced API latency through schema redesign and MongoDB query optimization.",
+      "Secure backend with JWT authentication and a modular REST API. Reduced API latency through schema improvements and MongoDB query optimization.",
     tech: ["Node.js", "Express.js", "MongoDB", "JWT"],
     links: [],
   },
@@ -80,12 +107,12 @@ export const projects = [
 ];
 
 export const skills = [
-  { group: "Languages", items: ["Python", "C++", "C", "JavaScript"] },
-  { group: "Backend", items: ["Node.js", "Express.js", "REST APIs", "JWT"] },
+  { group: "Languages", items: ["Python", "C++", "C", "JavaScript", "TypeScript"] },
+  { group: "Backend & web", items: ["FastAPI", "Node.js", "Express.js", "REST APIs", "JWT", "React", "Next.js"] },
   { group: "Systems", items: ["Linux", "Processes & threads", "TCP/IP", "HTTP"] },
-  { group: "Databases", items: ["MongoDB", "MySQL", "Indexing", "Query optimization"] },
-  { group: "Cloud & tools", items: ["IBM Cloud Functions", "AWS", "CI/CD", "Git"] },
-  { group: "ML", items: ["Scikit-learn", "Pandas", "NumPy"] },
+  { group: "Databases", items: ["PostgreSQL", "pgvector", "MongoDB", "MySQL", "Indexing", "Query optimization"] },
+  { group: "Cloud & tools", items: ["IBM Cloud Functions", "AWS", "Docker", "CI/CD", "Git"] },
+  { group: "AI & ML", items: ["LLM APIs", "RAG", "OpenCV", "Scikit-learn", "Pandas", "NumPy"] },
 ];
 
 export const education = {

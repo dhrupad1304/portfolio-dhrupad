@@ -9,6 +9,7 @@ const NAV = [
   { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
 ];
+const NAV_IDS = NAV.map((n) => n.id);
 
 const fadeUp = {
   initial: { opacity: 0, y: 16 },
@@ -121,7 +122,7 @@ function Tag({ children }) {
 export default function Portfolio() {
   const [dark, setDark] = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
-  const active = useActiveSection(NAV.map((n) => n.id));
+  const active = useActiveSection(NAV_IDS);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -133,7 +134,7 @@ export default function Portfolio() {
       <header className="fixed inset-x-0 top-0 z-40 border-b border-line/70 bg-bg/80 backdrop-blur-md">
         <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6" aria-label="Primary">
           <a href="#top" className="font-mono text-sm font-semibold">
-            dhrupad<span className="text-accent">.dev</span>
+            dhrupad<span className="text-accent">_</span>
           </a>
           <ul className="hidden items-center gap-1 md:flex">
             {NAV.map((n) => (
@@ -202,7 +203,7 @@ export default function Portfolio() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60 motion-reduce:hidden" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
-              Open to SWE internships & new-grad roles
+              B.Tech student · SGSITS Indore · Class of 2027
             </p>
             <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-7xl">
               {profile.name}
@@ -289,27 +290,15 @@ export default function Portfolio() {
                 className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-shadow hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/40"
               >
                 <div className="aspect-[16/10] overflow-hidden border-b border-line bg-bg">
-                  {p.image ? (
-                    <img
-                      src={p.image}
-                      alt={`${p.title} screenshot`}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                    />
-                  ) : (
-                    <div className="grid h-full place-items-center bg-gradient-to-br from-accent/15 via-transparent to-emerald-500/10">
-                      <pre className="font-mono text-xs leading-relaxed text-muted sm:text-sm">
-{`module counter(
-  input  clk, rst,
-  output reg [3:0] q
-);
-  always @(posedge clk)
-    q <= rst ? 0 : q + 1;
-endmodule`}
-                      </pre>
-                    </div>
-                  )}
+                  <img
+                    src={p.image}
+                    alt={`${p.title} screenshot`}
+                    loading="lazy"
+                    decoding="async"
+                    className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${
+                      p.fit === "contain" ? "bg-black object-contain" : "object-cover object-left-top"
+                    }`}
+                  />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex flex-wrap items-center gap-2">
@@ -377,9 +366,9 @@ endmodule`}
         <section id="contact" className="scroll-mt-24 py-24 text-center">
           <motion.div {...fadeUp}>
             <p className="font-mono text-sm text-accent">05 — Contact</p>
-            <h2 className="mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">Let's build something.</h2>
+            <h2 className="mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">Get in touch</h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-muted">
-              I'm looking for software engineering internships and new-grad roles in backend, systems and cloud. My inbox is open.
+              The quickest way to reach me is email.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 font-medium text-white shadow-lg shadow-accent/20 hover:bg-accent/90">
