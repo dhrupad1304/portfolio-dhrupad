@@ -3,9 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhrupad Gupta — Portfolio</title>
+    <title>Dhrupad Gupta — Software Engineer</title>
+    <meta name="description" content="Dhrupad Gupta — Software Engineer focused on backend, distributed systems and operating systems. Top 50 worldwide at IBM TechXchange Hackathon 2025." />
+    <meta name="author" content="Dhrupad Gupta" />
+    <meta name="theme-color" content="#0a0a0c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dhrupad Gupta — Software Engineer" />
+    <meta property="og:description" content="Backend · Distributed Systems · Operating Systems. Top 50 worldwide, IBM TechXchange Hackathon 2025." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <script>
+      // Set theme before paint to avoid a flash
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    </script>
   </head>
-  <body class="bg-gray-50">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
